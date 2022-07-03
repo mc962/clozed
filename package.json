@@ -1,5 +1,5 @@
 {
-  "name": "cloze",
+  "name": "clozed",
   "version": "1.0.0",
   "description": "Simple tool for creating cloze-deleted/tested sentences",
   "main": "dist/index.js",

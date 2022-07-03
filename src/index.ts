@@ -3,12 +3,12 @@
  * contained within module.
  *
  * Example:
- * <p class="cloze-sentence-container">The pepper is very<span class="cloze-word" data-word="spicy">_____</span></p>
+ * <p class="clozed-sentence-container">The pepper is very<span class="clozed-word" data-word="spicy">_____</span></p>
  */
 
-const CLOZE_PLACEHOLDER = '_____';
+const CLOZED_PLACEHOLDER = '_____';
 const REVEALED_CLASS = 'revealed';
-const CLOZE_NAMESPACE_CLASS = 'cloze';
+const CLOZED_NAMESPACE_CLASS = 'clozed';
 
 /**
  * Sets up all clozed sentences on page
@@ -23,15 +23,15 @@ export const initialize = () => {
  * Handles revealing a clozed word when a user clicks on the text
  */
 const clickListener = () => {
-    const tags = document.getElementsByClassName(`${CLOZE_NAMESPACE_CLASS}-sentence-container`);
+    const tags = document.getElementsByClassName(`${CLOZED_NAMESPACE_CLASS}-sentence-container`);
 
     for (let tag of tags) {
         tag.addEventListener('click', (event: Event) => {
             const target = event.target as HTMLElement;
 
-            if (target.classList.contains(`${CLOZE_NAMESPACE_CLASS}-word`)) {
+            if (target.classList.contains(`${CLOZED_NAMESPACE_CLASS}-word`)) {
                 if (target.classList.contains(REVEALED_CLASS)) {
-                    cloze(target);
+                    clozed(target);
                 } else {
                     uncloze(target);
                 }
@@ -54,7 +54,7 @@ const uncloze = (target: HTMLElement) => {
  * Hides clozed text for another reveal
  * @param {HTMLElement} target Container for clozed text that was clicked on
  */
-const cloze = (target: HTMLElement) => {
-    target.textContent = CLOZE_PLACEHOLDER;
+const clozed = (target: HTMLElement) => {
+    target.textContent = CLOZED_PLACEHOLDER;
     target.classList.remove(REVEALED_CLASS);
 };
