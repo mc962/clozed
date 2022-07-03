@@ -1,7 +1,7 @@
 {
   "name": "cloze",
   "version": "1.0.0",
-  "description": "",
+  "description": "Simple tool for creating cloze-deleted/tested sentences",
   "main": "dist/index.js",
   "types": "src/index.d.ts",
   "scripts": {
